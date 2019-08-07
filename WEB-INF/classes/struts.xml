@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  
+   <constant name="struts.multipart.saveDir" value="/tmp" />
+  <constant name="struts.multipart.maxSize" value="1073741824" />
+<package name="default" extends="struts-default">
+<action name="signup" class="Validation" method="signup">
+<result name="done">video.html</result>
+<result name="ndone">frontpage.jsp</result>
+<result name="nndone">frontpage.jsp</result>
+</action>
+<action name="login" class="CaptureIt" method="login">
+<result name="done">mygallery.jsp</result>
+<result name="ndone">frontpage.jsp</result>
+<result name="adone">adminrecords.jsp</result>
+</action>
+<action name="details" class="Validation" method="userDetails">
+<result name="done">tpwid.jsp</result>
+<result name="ndone">frontpage.jsp</result>
+</action>
+
+<action name="hof" class="Validation" method="hof">
+<result name="done">hofapprove.jsp</result>
+<result name="ndone">hofapprove.jsp</result>
+</action>
+
+<action name="approvecomp" class="Validation" method="approvecomp">
+<result name="done">aprovecompetetion.jsp</result>
+<result name="ndone">aprovecompetetion.jsp</result>
+</action>
+<action name="del1" class="Validation" method="del1">
+<result name="done">adminrecords.jsp</result>
+<result name="ndone">hofapprove.jsp</result>
+</action>
+<action name="del2" class="Validation" method="del2">
+<result name="done">adminrecords.jsp</result>
+<result name="ndone">hofapprove.jsp</result>
+</action>
+<action name="changep" class="Validation" method="changep">
+<result name="done">mygallery.jsp</result>
+<result name="ndone">compprofile.jsp</result>
+</action>
+<action name="changepp" class="Validation" method="changepp">
+<result name="done">frontpage.jsp</result>
+<result name="ndone">frontpage.jsp</result>
+</action>
+<action name="contactus" class="Validation" method="contactUs">
+<result name="done">tpwid.jsp</result>
+<result name="ndone">tpwid.jsp</result>
+</action>
+<action name="redeem" class="Validation" method="redeem">
+<result name="done">tpwid.jsp</result>
+<result name="ndone">redeemcredit.jsp</result>
+</action>
+<action name="upload" class="CaptureIt" method="profilePicture">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">10097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="success">mygallery.jsp</result>
+            <result name="nope">frontpage.jsp</result> 
+</action>
+<action name="upload1" class="CaptureIt" method="coverPicture">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">10097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="success">mygallery.jsp</result>
+            <result name="nope">frontpage.jsp</result> 
+</action>
+<action name="ggpic" class="CaptureIt" method="ggPicture">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">10097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="success">mygallery.jsp</result>
+            <result name="nope">mygallery.jsp</result> 
+</action>
+<action name="credit" class="Validation" method="creditEntry">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">10097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="done">contests.jsp</result>
+            <result name="ndone">mygallery.jsp</result> 
+</action>
+<action name="comppaytm" class="Validation" method="paytmEntry">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">15097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="done">contests.jsp</result>
+            <result name="ndone">mygallery.jsp</result> 
+</action>
+<action name="forum" class="CaptureIt" method="forum">
+<result name="done">forum.jsp</result>
+<result name="ndone">frontpage.jsp</result>
+</action>
+<action name="competetion" class="CaptureIt" method="compicture">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">10097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="success">createcomp.jsp</result>
+            <result name="nope">mygallery.jsp</result> 
+</action>
+<action name="article" class="CaptureIt" method="artpicture">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">3597152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="success">journal.jsp</result>
+            <result name="nope">mygallery.jsp</result> 
+</action>
+
+
+<action name="slider" class="Validation" method="slider">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">25097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="done">sliderimages.jsp</result>
+            <result name="ndone">sliderimages.jsp</result> 
+</action>
+
+
+<action name="art" class="CaptureIt" method="artapprove">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">25097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="done">artimages.jsp</result>
+            <result name="ndone">adminrecords.jsp</result> 
+</action>
+
+<action name="cigallery" class="CaptureIt" method="cigallery">
+<interceptor-ref name="fileUpload">  
+                <param name="maximumSize">10097152</param>  
+  
+                <param name="allowedTypes">  
+                    image/png,image/gif,image/jpeg,image/pjpeg  
+                                </param>  
+            </interceptor-ref>  
+            <interceptor-ref name="defaultStack"></interceptor-ref> 
+            <result name="success">mygallery.jsp</result>
+            <result name="nope">cigallery.jsp</result> 
+</action>
+<action name="decision" class="CaptureIt" method="decision1">
+<result name="done">adminrecords.jsp</result>
+<result name="ndone">adminrecords.jsp</result>
+</action>
+</package>
+</struts>
